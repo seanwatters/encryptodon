@@ -173,16 +173,13 @@ pub fn encrypt(status: String, pub_key: String, priv_key: String) -> Result<Stri
 
     encrypted.push(pad);
 
-    Ok(format!("🐘🔒:{}", b64.encode(encrypted)))
+    Ok(b64.encode(encrypted))
 }
 
 #[wasm_bindgen]
 pub fn decrypt(status: String, pub_key: String, priv_key: String) -> Result<String, String> {
     let shared_secret = string_keys_to_shared_secret(&pub_key, &priv_key)?;
     let cipher = aes::Aes256Dec::new(GenericArray::from_slice(&shared_secret));
-
-    let mut status = status;
-    status.drain(..3);
 
     let mut status_as_bytes = match b64.decode(status) {
         Ok(s) => s,
