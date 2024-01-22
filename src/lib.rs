@@ -140,11 +140,11 @@ pub fn generate_keys() -> Keys {
 /// let their_keys = encryptodon::generate_keys();
 /// let your_keys = encryptodon::generate_keys();
 ///
-/// /* your end */
+/// // your end
 /// let status = "Pachyderm Goes Private 🔐🐘".to_string();
 /// let encrypted_status = encryptodon::encrypt(status.clone(), their_keys.public(), your_keys.private()).unwrap();
 ///
-/// /* their end */
+/// // their end
 /// let decrypted_status = encryptodon::decrypt(encrypted_status, your_keys.public(), their_keys.private()).unwrap();
 ///
 /// assert_eq!(decrypted_status, status);
