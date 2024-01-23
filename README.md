@@ -1,5 +1,10 @@
 # Encryptodon
 
+[![npm](https://img.shields.io/npm/v/encryptodon.svg)](https://npmjs.org/package/encryptodon)
+[![crates.io](https://img.shields.io/crates/v/encryptodon.svg)](https://crates.io/crates/encryptodon)
+[![docs.rs](https://docs.rs/encryptodon/badge.svg)](https://docs.rs/crate/encryptodon/)
+[![license](https://img.shields.io/github/license/seanwatters/encryptodon.svg)](https://github.com/seanwatters/encryptodon/blob/main/LICENSE)
+
 Pachyderm Goes Private 🐘🕶️
 
 ## Encryption
@@ -7,7 +12,7 @@ Pachyderm Goes Private 🐘🕶️
 ```javascript
 // JavaScript (web)
 
-import init, { decrypt, encrypt, generate_keys } from "https://unpkg.com/encryptodon@0.1.7/encryptodon.js";
+import init, { decrypt, encrypt, generate_keys } from "https://unpkg.com/encryptodon@0.1.8/encryptodon.js";
 
 (async () => {
     await init();
@@ -37,8 +42,7 @@ let encrypted_status = encryptodon::encrypt(status.clone(), their_keys.public(),
 
 // their end
 let decrypted_status = encryptodon::decrypt(encrypted_status, your_keys.public(), their_keys.private()).unwrap();
-
-assert_eq!(decrypted_status, status);
+println!(decrypted_status); // -> i toot privately 🐘💨
 ```
 
 ## Bio Parsing
@@ -46,7 +50,7 @@ assert_eq!(decrypted_status, status);
 ```javascript
 // JavaScript (web)
 
-import init, { extract_key_from_bio } from "https://unpkg.com/encryptodon@0.1.7/encryptodon.js";
+import init, { extract_key_from_bio } from "https://unpkg.com/encryptodon@0.1.8/encryptodon.js";
 
 (async () => {
     await init();
@@ -66,5 +70,5 @@ let bio = "🐘🔑:0bmKKWS04lZzoPC/KlS1kJgWN+XnvBw0yn4PPnot73E=\nmore stuff..."
 
 let key = encryptodon::extract_key_from_bio(bio).unwrap();
 
-assert_eq!(key, "0bmKKWS04lZzoPC/KlS1kJgWN+XnvBw0yn4PPnot73E=");
+println!(key); // -> 0bmKKWS04lZzoPC/KlS1kJgWN+XnvBw0yn4PPnot73E=
 ```
