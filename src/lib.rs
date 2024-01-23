@@ -137,8 +137,8 @@ pub fn generate_keys() -> Keys {
 /// for encrypting the communication with their pub and your priv.
 ///
 /// ```rust
-/// let their_keys = encryptodon::generate_keys();
 /// let your_keys = encryptodon::generate_keys();
+/// let their_keys = encryptodon::generate_keys();
 ///
 /// // your end
 /// let status = "Pachyderm Goes Private 🔐🐘".to_string();
