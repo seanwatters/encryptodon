@@ -1,4 +1,4 @@
-# encryptodon is a goofy tool for e2ee 1:1 communications using just strings
+# Encryptodon is an e2ee library with various applications.
 
 # Copyright (C) 2024 sean watters
 
@@ -17,14 +17,14 @@
 
 [package]
 authors = ["sean watters <sean@watters.io>"]
-description = "Pachyderm Goes Private 🔐🐘"
+description = "Pachyderm Goes Private 🐘🕶️"
 edition = "2021"
 homepage = "https://github.com/seanwatters/encryptodon"
 license = "AGPL-3.0"
 name = "encryptodon"
 readme = "README.md"
 repository = "https://github.com/seanwatters/encryptodon"
-version = "0.1.5"
+version = "0.1.6"
 
 [dependencies]
 wasm-bindgen = "0.2.87"

@@ -1,5 +1,5 @@
 /*
-encryptodon is a goofy tool for e2ee 1:1 communications using just strings
+Encryptodon is an e2ee library with various applications.
 
 Copyright (C) 2024 sean watters
 
@@ -141,7 +141,7 @@ pub fn generate_keys() -> Keys {
 /// let their_keys = encryptodon::generate_keys();
 ///
 /// // your end
-/// let status = "Pachyderm Goes Private 🔐🐘".to_string();
+/// let status = "Pachyderm Goes Private 🐘🕶️".to_string();
 /// let encrypted_status = encryptodon::encrypt(status.clone(), their_keys.public(), your_keys.private()).unwrap();
 ///
 /// // their end
